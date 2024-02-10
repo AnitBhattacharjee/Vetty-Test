@@ -13,9 +13,9 @@ app = Flask(__name__)
 # ]
 
 
-@app.route('/file_content/', defaults={'filename': 'file1.txt'}, methods=['GET'])
+@app.route('/file_content/', methods=['GET'])
 @app.route('/file_content/<filename>', methods=['GET'])
-def file_content(filename):
+def file_content(filename='file1.txt'):
     start_line = request.args.get('start_line', None)
     end_line = request.args.get('end_line', None)
     
