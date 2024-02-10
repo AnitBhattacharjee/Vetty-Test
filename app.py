@@ -3,6 +3,16 @@ import chardet
 
 app = Flask(__name__)
 
+# # Define the navigation links
+# navigation_links = [
+#     {'url': '/', 'text': 'Home'},
+#     {'url': '/file_content/file1.txt', 'text': 'File 1'},
+#     {'url': '/file_content/file2.txt', 'text': 'File 2'},
+#     {'url': '/file_content/file3.txt', 'text': 'File 3'},
+#     {'url': '/file_content/file4.txt', 'text': 'File 4'}
+# ]
+
+
 @app.route('/file_content/', defaults={'filename': 'file1.txt'}, methods=['GET'])
 @app.route('/file_content/<filename>', methods=['GET'])
 def file_content(filename):
